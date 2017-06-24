@@ -113,6 +113,8 @@
 						<li>Form Labels &amp; Text Alternatives</li>
 						<li>Tab Index</li>
 						<li>External link indicators</li>
+            <li>Visually Hidden Content</li>
+            <li>ARIA</li>
 					</ul>
 				</section>
 
@@ -193,7 +195,7 @@ opens in a new window
 &lt;span&gt;
 &lt;/a&gt;
 </code></pre>
-					<p>For links that open in new windows, an offscreen <code>span</code> inside the link is most reliable for screen readers, but <code>title=""</code> can also be used.</p>
+					<p>For links that open in new windows, an offscreen <code>span</code> inside the link is most reliable for screen readers.</p>
           <aside class="notes">A common problem cited in the WebAIM survey is “unexpected screen changes”. Discuss how to warn users of links that open in new windows with offscreen text and title attributes. Include a discussion about how it's really about usability in general. Recommended reading: “Don't Make Me Think” by Steve Krug</aside>
 				</section>
 
@@ -285,19 +287,19 @@ opens in a new window
 						<h2>ARIA Core Components</h2>
 						<div class="inset-width">
 							<div class="definition">
-								<h4 style="margin-top: 0.75em">Roles</h4>
+								<h4 style="margin-top: 0.75em">Landmark Roles</h4>
 								<p>What does this thing do?</p>
 <pre><code class="html xml">&lt;form role="search"&gt;</code></pre>
 							</div>
-							<div class="definition">
-								<h4 style="margin-top: 0.75em">States</h4>
-								<p>The current condition of this particular thing</p>
-<pre><code class="html xml">&lt;input aria-disabled="true"&gt;</code></pre>
+              <div class="definition">
+								<h4 style="margin-top: 0.75em">Properties</h4>
+								<p>The nature of the thing, describe relationships with other elements</p>
+<pre><code class="html xml">&lt;input aria-required="true"&gt;</code></pre>
 							</div>
 							<div class="definition">
-								<h4 style="margin-top: 0.75em">Properties</h4>
-								<p>The nature of the thing</p>
-<pre><code class="html xml">&lt;input aria-required="true"&gt;</code></pre>
+								<h4 style="margin-top: 0.75em">States</h4>
+								<p>The current state of this particular thing - typically updated with JavaScript</p>
+<pre><code class="html xml">&lt;input aria-disabled="true"&gt;</code></pre>
 							</div>
 						</div>
 					</section>
