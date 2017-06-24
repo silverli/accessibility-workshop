@@ -18,11 +18,12 @@
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="css/accesscustom.css">
 
     <!-- For syntax highlighting -->
-    <!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
-    <!-- dark editor--><link rel="stylesheet" href="lib/css/dark.css">
-    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- light editor--><link rel="stylesheet" href="lib/css/light.css">
+    <!-- dark editor<link rel="stylesheet" href="lib/css/dark.css">-->
+    <!--<link rel="stylesheet" href="lib/css/zenburn.css">-->
 
     <link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
 
@@ -52,15 +53,645 @@
 
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
-        <!-- Opening -->
-        <section style="display: block;">
-          <h3>Web Accessibility</h3>
-          <h4>Class Slides</h4>
+        <!-- Opening slides -->
+        <section>
+          <img src="img/gdi-pgh-logo.jpg" alt="Girl Develop It" style="max-height: 400px;" class="nonbordered">
+          <h1 id="slide1">Web Accessibility Workshop</h1>
+        </section>
+
+        <!-- Welcome-->
+        <section>
+          <h2>Welcome!</h2>
+          <p>Girl Develop It is here to provide affordable, accessible, and empowering resources for adult women to learn programming and web concepts.</p>
+        </section>
+
+        <section>
+          <p class="green">Some "rules":</p>
           <ul>
-            <li><a href="class1.html">Class 1</a></li>
-            <li><a href="class2.html">Class 2</a></li>
+            <li>We are here for you!</li>
+            <li>Every question is important</li>
+            <li>Help each other</li>
+            <li>Have fun</li>
           </ul>
         </section>
+
+        <section>
+          <h2>Introductions</h2>
+          <ol>
+            <li>Tell us about yourself. What do you do? </li>
+            <li>What's your coding experience?</li>
+            <li>What do you hope to get out of the class today?</li>
+          </ol>
+        </section>
+
+        <section>
+					<h2>Overview for Today</h2>
+					<ul>
+            <li>Types of Disabilities</li>
+            <li>Ways to implement accessibility for those disabilities</li>
+            <li>Screenreader Demo &amp; Activity</li>
+            <li>Ways to implement accessibility for visually impaired users:</li>
+            <ul>
+              <li>Alt Text for Images</li>
+              <li>Link Text</li>
+              <li>HTML and Heading structure (Semantics)</li>
+              <li>Color Contrast</li>
+              <li>Visually Hidden Elements just for Screenreader Users</li>
+              <li>ARIA</li>
+            </ul>
+					</ul>
+          <aside class="notes">
+            <p>We'll spend most of our time on visual disabilities since the web is such a visual medium -- this is what needs to be translated</p>
+          </aside>
+				</section>
+
+        <!-- Intro: What is Accessibility?-->
+        <section>
+          <h2>Who can use your sites?</h2>
+          <img src="img/disabled-iphone.jpg" alt="Happy iPhone users"/>
+          <p class="credit">Photo credit: <a href="http://www.deaftechnews.com/2012/04/17/see-how-blind-people-use-the-iphone-4s-video/" target="_blank" title="Link opens in a new window">DeafTech News<span class="visuallyhidden"> opens in a new window</span></a></p>
+        </section>
+        <section>
+          <h2>What is accessibility?</h2>
+          <ul>
+            <li>Accessibility is about making your sites useful to as many people as possible.</li>
+            <li>Accessibility is about overcoming barriers.</li>
+            <li>Accessibility is about helping your users.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Why make your sites accessible?</h2>
+          <ul>
+            <li class="fragment">Expand your potential audience! 56.7 million people in the US have a disability, 1.8 million are unable to see printed words, and 16.1 million have a cognitive or mental illness that impedes daily functioning (<a href="https://www.census.gov/content/dam/Census/library/publications/2012/demo/p70-131.pdf" target="_blank" title="Link opens in a new window">source<span class="visuallyhidden"> opens in a new window</span></a>).</li>
+            <!-- TODO -->
+            <li class="fragment">Be in compliance with legal guidelines, like and <a href-"https://www.w3.org/WAI/intro/wcag">WCAG 2.0.</a></li>
+            <li class="fragment">Avoid <a href="http://accessibletech.org/access_articles/legal/courtCases.php" target ="_blank">potential lawsuits<span class="visuallyhidden"> opens in a new window</span>.</a></li>
+            <li class="fragment">Do the right thing.</li>
+          </ul>
+          <aside>
+            <p>Web Content Accessibility Guidelines (WCAG) through The World Wide Web Consortium (W3C) </p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Accessibility is for everyone!</h2>
+          <img src="img/curbcut.jpg" alt="Curb cut on sidewalk" />
+          <p class="credit">Photo credit: <a href="http://www.flickr.com/photos/firelizard5/8479806007/">Sylvia Pellicore</a> <a href="http://creativecommons.org/licenses/by/2.0/">cc<span class="visuallyhidden"> opens in a new window</span></a></p>
+          <aside class="notes">
+            <p>Ask if people recognize curb cut, then point out that while wheelchairs use them, so do strollers, people with luggage, etc.  Mention how accessibility can help the non-disabled as well.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Benefits of Accessibility</h2>
+          <ul>
+            <li>Curb cuts were designed for wheelchairs, but others use them. Similarly, accessibility features end up helping everyone.</li>
+            <li>Many times, good design and user experience practices create accessibility as a side effect.</li>
+            <li>Accessibility features, like good alt text, can improve your search engine placement.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Useful stats from the 2010 U.S. Census Bureau:</h2>
+          <ul>
+            <p>56.7 million people have a disability--19 percent of the civilian noninstitutionalized population.</p>
+            <li>Auditory</li>
+            <li>Physical</li>
+            <li>Speech</li>
+            <li>Cognitive</li>
+            <li>Visual</li>
+          </ul>
+          <aside class="notes">
+            <h2>Types of Disability</h2>
+            <ul>
+              <li class="fragment">Hearing disabilities: deaf or hard-of-hearing</li>
+              <li class="fragment">Physical disabilities: MS, paraplegic/quadriplegic, epilepsy</li>
+              <li class="fragment">Cognitive disabilities: dyslexia, alzheimer's, dementia, learning disabilities, autism</li>
+              <li class="fragment">We'll spend most of our time here: Visual disabilities: blind or low-sight, color blind, tunnel vision</li>
+              <p>We will mostly be using screen readers today because making the web accessible for users with visual disabilities is among the hardest and most confusing for sighted users to understand</p>
+              <p>Also, the use of a keyboard with screen readers mimics what keyboard-only users do (who have physical, motor difficulty)</p>
+            </ul>
+          </aside>
+        </section>
+
+        <!-- Hearing disabilities-->
+        <section>
+          <h3>Provide good captions</h3>
+          <img src="img/in_ur_reality.png" alt="Stick figure attaching captions to cats. Dialog- Man: Oh hi; I'm here from the internet; Man 2: What are you doing!?; Man: Gluing captions to your cats."/>
+          <p class="credit">Credit: <a href="http://xkcd.com/262/" target="_blank" title="Link opens in a new window">Randall Munroe<span class="visuallyhidden"> opens in a new window</span></a> <a href="http://creativecommons.org/licenses/by-nc/2.5/" target="_blank" title="Link opens in a new window">cc<span class="visuallyhidden"> opens in a new window</span></a></p>
+        </section>
+        <section>
+          <h3>No, automatic captions don't count</h3>
+          <img src="img/bad-captions.png" alt="YouTube video with nonsense captions: Look at your help literally now you can link your data from hell"/>
+          <p class="credit">Credit: Sylvia Pellicore, from YouTube</p>
+          <aside class="notes">
+            <p>The original audio in that clip was "link your data from <strong>health</strong> care apps"</p>
+          </aside>
+        </section>
+        <section>
+          <h3>Hearing Disabilities</h3>
+          <ul>
+            <li class="fragment">Most deaf or hard-of-hearing people have limited difficulty with web accessibility.</li>
+            <li class="fragment">Provide captions or transcripts for multimedia elements.</li>
+            <li class="fragment">Don't rely on sounds to convey information, like an "alert" noise. Even hearing users often have their computers muted.</li>
+            <li class="fragment">Be especially careful if your site targets older users, as hearing loss is common.</li>
+          </ul>
+          <aside class="notes">
+            <p>Paid captioning services are relatively inexpensive, about $1.50 to $2.50 a minute.</p>
+          </aside>
+        </section>
+
+        <!-- Physical disabilities-->
+        <section>
+          <h3>Physical Disabilities</h3>
+          <ul>
+            <li class="fragment">Many users with limited mobility interact with the screen via keyboard.</li>
+            <li class="fragment">Other users use a mouse, but have trouble with fine motor control.</li>
+            <li class="fragment">Make clickable elements large, and put space between them.</li>
+            <li class="fragment">Avoid clickable page elements that move.</li>
+            <li class="fragment">Animations with rapid flickers are not only annoying, they can trigger epileptic seizures.</li>
+            <li class="fragment">These guidelines also help children and touchscreen users!</li>
+          </ul>
+        </section>
+
+        <!-- Cognitive disabilities-->
+        <section>
+          <h3>Don't overwhelm</h3>
+          <img src="img/toomanysigns.jpg" alt="Sign post with multiple signs"/>
+          <p class="credit">Photo credit: <a href="http://www.flickr.com/photos/thomashawk/2402598275/" target="_blank" title="Link opens in a new window">Thomas Hawk<span class="visuallyhidden"> opens in a new window</span></a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank" title="Link opens in a new window">cc<span class="visuallyhidden"> opens in a new window</span></a></p>
+        </section>
+        <section>
+          <h3>Provide plenty of time</h3>
+          <img src="img/clock.jpg" alt="Alarm clock"/>
+          <p class="credit">Photo credit: <a href="http://www.flickr.com/photos/beth19/4721798240/" target="_blank" title="Link opens in a new window">Bethan<span class="visuallyhidden"> opens in a new window</span></a> <a href="http://creativecommons.org/licenses/by-nc-nd/2.0/" target="_blank" title="Link opens in a new window">cc<span class="visuallyhidden"> opens in a new window</span></a></p>
+        </section>
+        <section>
+          <h3>Dealing with cognitive disabilities</h3>
+          <ul>
+            <li class="fragment">This is a less-researched area of web accessibility. Here is a <a href="http://jkg3.com/Journal/cognitive-accessibility-101-part-1-what-is-cognitive-accessibility">Cognitive 101</a>.</li>
+            <li class="fragment">Minimize cognitive load--don't overwhelm the user.</li>
+            <li class="fragment">Use common icons to mark important tasks and consider text labels.</li>
+            <li class="fragment">If you have timed content (forms, image galleries, etc.) provide controls or allow users to extend time.</li>
+            <li class="fragment">CAPTCHAs aren't blind-friendly, are very difficult for users with learning disabilities like dyslexia, and annoy everyone. Consider <a href="http://webaim.org/blog/spam_free_accessible_forms/" target="_blank" title="Link opens in a new window">an alternative method<span class="visuallyhidden"> opens in a new window</span></a>.</li>
+          </ul>
+          <img class="fragment" src="img/captcha.png" alt="Screenshot of a Captcha" />
+        </section>
+
+        <!-- Working with Screen readers-->
+        <section>
+          <h2>Visual disabilities</h2>
+          <img src="img/canes.jpg" alt="Blind pedestrians with white canes"/>
+          <p class="credit">Photo credit: <a href="http://www.flickr.com/photos/brailleinstitute/5169573221/" target ="_blank">Braille Institute<span class="visuallyhidden"> opens in a new window</span></a> <a href="http://creativecommons.org/licenses/by-nc-nd/2.0/" target ="_blank">cc<span class="visuallyhidden"> opens in a new window</span></a></p>
+          <aside>
+            <ul>
+              <li class="fragment">We'll spend most of our time here: Visual disabilities: blind or low-sight, color blind, tunnel vision</li>
+              <p>We will mostly be using screen readers today because making the web accessible for users with visual disabilities is among the hardest and most confusing for sighted users to understand</p>
+              <p>Also, the use of a keyboard with screen readers mimics what keyboard-only users do (who have physical, motor difficulty)</p>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>What assitive technology do people with visual impairment use?</h2>
+          <ul>
+            <li>Browser zoom</li>
+            <li>Screen magnification</li>
+            <li>High contrast displays</li>
+            <li>Screen readers</li>
+          </ul>
+          <aside class="notes">Important points:
+            <ul>
+              <li>Low vision is very common</li>
+              <li>Even people who are legally blind may have some residual vision</li>
+              <li>Screen readers are also useful for people with print disabilities, like dyslexia</li>
+              <li>Screen readers: e.g. JAWS for Windows, NVDA, Voiceover for Apple products, ChromeVox (Chrome Extension)</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>Demo</h2>
+          <ul>
+            <li><a href="http://www.ikea.com/us/en/">Ikea</a></li>
+            <li><a href="https://www.starbucks.com/">Starbucks</a></li>
+          </ul>
+          <aside class="notes">
+            <p>This exercise not only builds empathy, but gives you insight and experience into what visually impaired users are experiencing.</p>
+            <p>Choose a site with a complex nav menu, and show how long it takes to get through with a screen reader. I used CNN.com.</p>
+            <p>Now, compare a site like starbucks to see skip nav, the difference thinking about accessibility can make.</p>
+            <p>only about 0.3% of users who responded to survey use Chrome Vox (most use JAWS, NVDA) on their laptop/desktop, but there are constraints to both of these—either need $1000 subscription or windows, so making do with a solid screen reader like Chrome Vox is fine for testing maybe not as much functionality as JAWS, but basic functionality is there</p>
+            <ul>
+              <li>Chrome Vox + N + H = Jump to next heading</li>
+              <li>Chrome Vox + P + H = Jump to previous heading</li>
+              <li>Chrome Vox + N + L = Jump to next link</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h2>Let's try it</h2>
+          <ul>
+            <li><a href="https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en">Chrome Vox</a></li>
+            <li>VoiceOver / Talkback</li>
+          </ul>
+          <aside class="notes">
+            <p>Website you all want to try? Have a task in mind--trying to find hours, a piece of clothing, etc.</p>
+            <p>Have students try the screenreader demo at http://webaim.org/simulations/screenreader-sim.htm. (With headphones!) You may have to help people install the Shockwave  plugin. Time limit to ten minutes, and cut it short if students seem bored or frustrated.</p>
+            <p>If available, demo VoiceOver on the iPhone/iPad or Talkback on Android.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Screen Reader Activity: Discussion</h2>
+          <ul>
+            <li>How did that feel?</li>
+            <li>What did you expect from the experience?</li>
+            <li>How did using a screen reader meet your expectations?</li>
+            <li>What was surprising about it?
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>So what are some things we can do to help visually impaired users experience of the web?</h2>
+          <p>(Which will also benefit many other users with disabilities).</p>
+          <ul>
+            <li>Alt Text for Images</li>
+            <li>Link Text</li>
+            <li>HTML and Heading structure (Semantics)</li>
+            <li>Color Contrast</li>
+            <li>Visually Hidden Elements just for Screenreader Users</li>
+            <li>ARIA</li>
+          </ul>
+        </section>
+
+        <!-- Alternate text -->
+        <section>
+          <h2>Alt text</h2>
+          <ul>
+            <li class="fragment">Alternate text describes pictorial content in words.</li>
+            <li class="fragment">Pay attention to context.</li>
+            <li class="fragment">Should never user "image of" to describe</li>
+            <li class="fragment">If an image is purely decorative, use <code>alt=""</code> to instruct a screen reader to skip it.</li>
+            <li class="fragment">Consider using HTML5 <code>figure</code> and <code>figcaption</code>.</li>
+          </ul>
+          <pre class="fragment">
+            <code class="html">
+            &#60;img src="location.jpg" alt="brief description"&#62;
+            &lt;figure&gt;
+              &lt;img src="location.jpg"&gt;
+              &lt;figcaption&gt;brief description&lt;/figcaption&gt;
+            &lt;/figure&gt;
+          </code></pre>
+        </section>
+        <section>
+          <h2>Logos</h2>
+          <img src="img/gdi-pgh-logo.jpg" alt="">
+          <p>What should the alt text be?</p>
+          <aside class="notes">
+            <p>Alt text: “Innovation Studio - Home”, “Home”, “Innovation Studio Logo”</p>
+            <p>It is a good idea here, when you have a logo on every page of the site, to state the logo name/brand and where it redirects to on the site if clicked on.</p>
+          </aside>
+        </section>
+        <section>
+          <h2>Decorative Images</h2>
+          <img src="https://images.blogthings.com/thecolorfulpatterntest/pattern-1.png" alt="">
+          <p>What should the alt text be?</p>
+          <aside class="notes">
+            <p>Alt text: ''</p>
+            <p>This background, or decorative image is completely skipped by a screen reader because it has an empty alt tag.</p>
+          </aside>
+        </section>
+        <section>
+          <h2>Images related to the content on the page</h2>
+          <img src="http://file.nekogazou.ni-moe.com/Img/1426582542/" alt="cat burrito">
+          <p>What should the alt text be?</p>
+          <aside class="notes">
+            <p>Possible alt tags: “Cat rolled up in a piece of paper”, “Cat burrito”, “Cute cat picture”</p>
+            <p>Alt tags are also important for sighted readers. If your image path ever changes, your alt tag will still show up on the page, and no loss of information will occur</p>
+          </aside>
+        </section>
+        <section>
+					<h2>Link Text</h2>
+					<p>Just like alt text, give context!</p>
+					<img src="img/dont-make-me-think.jpg" alt="Don't Make Me Think by Steve Krug" style="float: right;max-width:25%;" class="nonbordered" />
+					<img src="img/links-WCAG.png" alt="WCAG 2.0 Link requirements" class="nonbordered" />
+					<img src="img/how-i-audit-a-website-external-link.png" alt="How I Audit a Website for Accessibility external link indicator" class="nonbordered" />
+				</section>
+
+				<section>
+					<h2>External Links</h2>
+					<h3>Let's Look at Some Code</h3>
+<pre>
+  <code class="html" data-trim>
+      &lt;a href="goofy.html"&gt;Goofy page&lt;/a&gt;
+
+    &lt;a href="http://disney.com" target="_blank" class="external-link"&gt;
+      Disney.com
+      &lt;span class="offscreen"&gt;
+      opens in a new window
+      &lt;span/&gt;
+    &lt;/a&gt;
+  </code>
+</pre>
+					<p>For links that open in new windows, an offscreen <code>span</code> inside the link is most reliable for screen readers.</p>
+          <aside class="notes">
+            <p>A common problem cited in the WebAIM survey is “unexpected screen changes”. Discuss how to warn users of links that open in new windows with offscreen text and title attributes. Include a discussion about how it's really about usability in general. Recommended reading: “Don't Make Me Think” by Steve Krug</p>
+            <ul>
+              <li><strong>Link text</strong>: Make the link text describe its purpose and destination. If you are linking to something from an image or icon, supply a title attribute to give people who use screen readers some context.</li>
+              <li><strong>Link styling</strong>: To clearly indicate links, underline them when possible. There should be some visual state change other than color when hovering or focusing on links. Do not rely on color or color changes alone to indicate links.</li>
+              <li><strong>Navigation</strong>: Users should be able to tab to navigate between links, and active a link by pressing “Enter” on the keyboard. They should be able to activate hover and focus states with either a mouse or a keyboard.</li>
+              <li><strong>Linked Images</strong>: Images that are used as the link text for a link should have especially descriptive alt text, as it will be used as the link text for the link by screenreaders. The text of the image’s alt attribute, followed by the word “link” will be announced as the link text for the link.</li>
+              <li><strong>New window or tab</strong>: If a link opens a new tab, or takes the user out of the current format or application, that action should be indicated by the link text. It can be disorienting to users – especially those with cognitive, sight, or mobility problems – to unexpectedly open an item in a new format or application. Indicate either via contextual text near the links, or (preferably) with very clear link text, where links lead, and how they will open. If you need to add contextual text to the link text, consider using a nested tag that is visually hidden for sighted users. An example is given below.</li>
+            </ul>
+          </aside>
+				</section>
+
+        <section>
+          <h1>Semantic HTML Structure</h1>
+          <p>Deals with the structure of the page, or the DOM</p>
+          <aside class="notes">
+            <ul>
+              <li>Semantic HTML is key starting point for good a11y</li>
+              <li>Screenreaders scan the page, have functionality to just tell person about headings, links etc.</li>
+              <li>This allows us to let people who can't see especially know about the content on the page, and how it relates to other content</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section>
+					<h2>HTML Headings</h2>
+					<p>Semantic structure is one of the most important usability features for screen reader users, Headings and their structure also help navigate the page.</p>
+<pre><code class="html">// Headings should not skip levels until h1-h4 have been established
+&lt;h1&gt;Most important&lt;/h1&gt;
+&lt;h2&gt;Next most important&lt;/h2&gt;
+&lt;h3&gt;Third most important&lt;/h3&gt;
+&lt;h4&gt;Other heading&lt;/h4&gt;
+&lt;h5&gt;Other heading&lt;/h5&gt;
+&lt;h6&gt;Other heading&lt;/h6&gt;
+</code></pre>
+          <aside class="notes">
+            <ul>
+              <li>Use one H1 per page, matching the page title.</li>
+              <li>Do not skip heading levels when increasing, but you can skip levels when decreasing (h1, h2, h3, h2, h3, h4, h2, h3, h4).</li>
+              <li>The headings taken out of context should logically represent the page content for screen readers and users who choose this option as a way to scan the page.</li>
+            </ul>
+          </aside>
+				</section>
+
+        <section>
+          <h1>Ideal DOM Layout</h1>
+          <pre><code class='html'>
+                  &lt;html lang="en"&gt;
+                      &lt;head&gt;&lt;/head&gt;
+                      &lt;body&gt;
+                          &lt;header&gt;
+                              &lt;nav&gt;&lt;/nav&gt;
+                          &lt;/header&gt;
+                          &lt;main&gt;
+
+                              &lt;section&gt;&lt;/section&gt;
+                              &lt;article&gt;&lt;/article&gt;
+                              &lt;aside&gt;&lt;/aside&gt;
+                              &lt;div&gt;&lt;/div&gt;
+
+                          &lt;/main&gt;
+                          &lt;footer&gt;&lt;/footer&gt;
+                      &lt;/body&gt;
+                  &lt;/html&gt;
+            </code></pre>
+          <aside class="notes">
+            <p>Elements like div and span are for layout only. They’re semantically meaningless, they don’t have keyboard or touch support in any browser, and they don’t communicate anything to the accessibility API. For example, never use a div or span for a button when you could use a semantically meaningful button element.</p>
+          </aside>
+        </section>
+
+        <!-- Other visual disabilities-->
+        <section>
+          <h2>Provide contrast</h2>
+          <img src="img/contrast.jpg" alt="Crosswalk with contrasting colors"/>
+          <p class="credit">Photo credit: <a href="http://www.flickr.com/photos/antifluor/2074560932/" target="_blank" title="Link opens in a new window">antifluor<span class="visuallyhidden"> opens in a new window</span></a> <a href="http://creativecommons.org/licenses/by/2.0/" target="_blank" title="Link opens in a new window">cc<span class="visuallyhidden"> opens in a new window</span></a></p>
+          <aside class="notes">
+            <p>As people who value design, color contrast issues can feel limiting.</p>
+            <p>But if a11y is thought about upfront, this challenges can be alleviated</p>
+            <p>Find colors that provide maximum contrast, including enough contrast between content and the background, so that text and non-decorative images are legible for anyone with low vision or color deficiencies.</p>
+          </aside>
+        </section>
+        <section>
+          <h1>Resources for Color Contrast</h1>
+          <ul>
+            <li><a href="http://jxnblk.com/colorable/demos/text/?background=%23222233&foreground=%23ffffff">Demo Tool</a></li>
+            <li><a href="http://webaim.org/resources/contrastchecker/">Web AIM Contrast Checker</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>More tips for using color</h2>
+          <ul>
+            <li class="fragment">If you use color to indicate something, also use another indicator. For example, underline links on hover or mark a required field with an asterisk.</li>
+            <li class="fragment">Red/green color blindness is the most common, so avoid green on red.</li>
+            <li class="fragment">Include color names in product descriptions and show examples (<a href="http://24ways.org/2012/colour-accessibility/" target="_blank" title="Link opens in a new window">article<span class="visuallyhidden"> opens in a new window</span></a>)</li>
+            <li class="fragment">Have a <em>minimum</em> of contrast ratio of 4.5:1 for normal text and 3:1 for large text. (<a href="http://webaim.org/resources/contrastchecker/" target="_blank" title="Link opens in a new window">Checker<span class="visuallyhidden"> opens in a new window</span></a>)</li>
+            <li class="fragment">Try zooming in on your designs, to see how they look when enlarged. It is a good idea to use ems and percentages instead of pixels when you can.</li>
+          </ul>
+        </section>
+
+        <section>
+					<h2>Visually Hidden Content</h2>
+					<h3>How does it work?</h3>
+<pre><code class="css" data-trim>/* Hide only visually, but have it available for screenreaders.*/
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+</code></pre>
+						<p><a href="http://snook.ca/archives/html_and_css/hiding-content-for-accessibility">Hiding Content for Accessibility</a></p>
+            <aside class="notes">
+              <p>If time, do an example in html locally</p>
+            </aside>
+					</section>
+
+          <section>
+						<h2>How do I code for accessibility?</h2>
+						<h3>Accessible Rich <br>Internet Applications</h3>
+						<ul>
+							<li>Expands HTML's native vocabulary.</li>
+							<li>Communicates state and purpose to assistive technologies.</li>
+							<li>Used mainly for custom widgets and web applications.</li>
+						</ul>
+						<p style="margin-top:1em;"><a href="https://www.marcozehe.de/2014/03/27/what-is-wai-aria-what-does-it-do-for-me-and-what-not/" target="_blank">What is WAI-ARIA, what does it do for me, and what not?<span class="visuallyhidden"> opens in a new window</span></a></p>
+					</section>
+
+					<section>
+						<h2>ARIA Core Components</h2>
+						<div class="inset-width">
+							<div class="definition">
+								<h4 style="margin-top: 0.75em">ARIA Landmark Roles</h4>
+								<p>What does this thing do?</p>
+<pre><code class="html xml">&lt;form role="search"&gt;</code></pre>
+<pre><code class="html xml">&lt;nav role="navigation"&gt;</code></pre>
+							</div>
+						</div>
+            <aside class="notes">
+              <ul>
+                <li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-activedescendant">aria-activedescendant</a>: Identifies the currently active descendant of a composite widget. Use with autofill search suggestions.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-autocomplete">aria-autocomplete</a>: Indicates whether user input completion suggestions are provided. Use with autofill search suggestions.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-checked">aria-checked (state)</a>: Indicates the current “checked” state of checkboxes, radio buttons, and other widgets. You can set this to true, false, or mixed state. See related aria-pressed and aria-selected.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls">aria-controls</a>: Identifies the element (or elements) whose contents or presence are controlled by the current element. See related aria-owns.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-describedby">aria-describedby</a>: Identifies the element (or elements) that describes the object. See related aria-labelledby.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-disabled">aria-disabled (state)</a>: Indicates that the element is perceivable but disabled, so it is not editable or otherwise operable. See related aria-hidden and aria-readonly.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded">aria-expanded (state)</a>: Indicates whether the element, or another grouping element it controls, is currently expanded or collapsed.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-hidden">aria-hidden (state)</a>: Indicates that the element and all of its descendants are not visible or perceivable to any user as implemented by the author. See related aria-disabled.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-invalid">aria-invalid (state)</a>: Indicates the entered value does not conform to the format expected by the application.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-label">aria-label</a>: Defines a string value that labels the current element. See related aria-labelledby.
+
+                <ul>
+                  <li>According to a <a href="https://webaccessibility.withgoogle.com/course">Google Accessibility tutorial</a>, it is not always practical or desirable to have visible labels for all of your objects. For example, there might only be enough space in your toolbar for a printer icon without a visible “Print” label. In cases like this, you should use the aria-label attribute to provide text labels so that users of screen readers and other adaptive technologies can understand what the object is used for.</li>
+                  <li>In cases where we use an X, or X as a close button, it is especially important to have an aria label of “Close button” as a screen reader will otherwise read ‘multiplication’ or 'X’ to its user.</li>
+                  </ul></li>
+                  <li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-labelledby">aria-labelledby</a>: Identifies the element (or elements) that labels the current element. See related aria-label and aria-describedby.</li>
+                  <li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-live">aria-live</a>: Indicates that an element is dynamic, changing, and will be updated, and describes the types of updates the user can expect from the live region.
+
+                <ul>
+                  <li>There are two types of live regions: polite and assertive.</li>
+                  <li>When an element uses the polite attribute, the screen reader is able to finish reading what it was focused on before it reads the updated live region.</li>
+                  <li>With an assertive attribute, the screen reader interrupts what it is doing to read the updated live region.</li>
+                </ul>
+                <li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-owns">aria-owns</a>: Identifies an element (or elements) in order to define a visual, functional, or contextual parent/child relationship between DOM elements where the DOM hierarchy cannot be used to represent the relationship. See related aria-controls.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-pressed">aria-pressed (state)</a>: Indicates the current “pressed” state of toggle buttons. See related aria-checked and aria-selected.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-required">aria-required</a>: Indicates that user input is required on the element before a form may be submitted.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-selected">aria-selected (state)</a>: Indicates the current “selected” state of various widgets. See related aria-checked and aria-pressed.</li>
+              </ul>
+            </aside>
+					</section>
+
+          <section>
+            <div class="definition">
+              <h4 style="margin-top: 0.75em">ARIA Properties</h4>
+              <p>The nature of the thing, describe relationships with other elements</p>
+              <pre><code class="html xml">&lt;input aria-required="true"&gt;</code></pre>
+              <pre><code class="html xml">&lt;input aria-label="Mobile Navigation"&gt;</code></pre>
+            </div>
+          </section>
+          <section>
+            <div class="definition">
+              <h4 style="margin-top: 0.75em">ARIA States</h4>
+              <p>The current state of this particular thing - typically updated with JavaScript</p>
+<pre><code class="html xml">&lt;input aria-disabled="true"&gt;</code></pre>
+<pre><code class="html xml">&lt;input aria-expanded="false"&gt;</code></pre>
+<pre><code class="html xml">&lt;input aria-hidden="true"&gt;</code></pre>
+            </div>
+          </section>
+
+        <section>
+          <h2>Benefits of Accessibility</h2>
+          <ul>
+            <li>Curb cuts were designed for wheelchairs, but others use them. Similarly, accessibility features end up helping everyone.</li>
+            <li>Many times, good design and user experience practices create accessibility as a side effect.</li>
+            <li>Accessibility features, like good alt text, can improve your search engine placement.</li>
+          </ul>
+        </section>
+
+
+        <!-- How To-->
+        <section>
+          <h2>Accessibility is a continuum, not a checkbox</h2>
+          <img src="img/checkmark.jpg" alt="Checkmark with word 'chk' on blackboard"/>
+          <p class="credit">Photo credit: <a href="http://www.flickr.com/photos/mattcarman/1573507091/" target ="_blank">Matt Carman<span class="visuallyhidden"> opens in a new window</span></a> <a href="http://creativecommons.org/licenses/by-nc-nd/2.0/" target ="_blank">cc<span class="visuallyhidden"> opens in a new window</span></a></p>
+          <aside class="notes">
+            <p>Accessibility tools can help, but they are not a full subsititute for manual testing.</p>
+            <p>You don't have to be perfect to be helping. No site will be perfectly accessible for everyone in the world.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Primary Resources &amp; Articles</h2>
+          <ul>
+            <li><a href="https://www.w3.org/WAI/WCAG20/quickref/">W3C Accessibility Guidelines &amp; Requirements</a></li>
+            <li><a href="https://standards.usa.gov/getting-started/">US Web Design Standards</a></li>
+            <li><a href="http://web-accessibility.carnegiemuseums.org/">Carnegie Museums Web Accessibility Guide</a></li>
+          </ul>
+        </section>
+
+      <section>
+        <h2>General Resources &amp; Articles</h2>
+        <ul>
+          <li><a href="http://www.glendathegood.com/blog/?cat=3">Glenda Sims Blog on Accessibility</a></li>
+          <li><a href="http://www.deque.com/blog/">The Deque Blog: On Accessibility</a></li>
+          <li><a href="https://a11ywins.tumblr.com/">Accessibility Wins: Showcasing accessible user interfaces and tools</a></li>
+          <li><a href="http://www.census.gov/prod/2012pubs/p70-131.pdf">Americans with Disabilities: 2010 Report</a></li>
+          <li><a href="http://www.adatitleiii.com/">ADA Title III Blog: News &amp; Insights</a></li>
+          <li><a href="http://www.ada.gov/access-technology/">Information and Technical Assistance on the Americans with Disability Act</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>General Resources &amp; Articles</h2>
+        <ul>
+          <li><a href="http://alistapart.com/topic/accessibility">A List Apart Articles on Accessibility</a></li>
+          <li><a href="http://simplyaccessible.com/articles/">Simply Accessible Articles</a></li>
+          <li><a href="http://www.accessibilityoz.com/ozwiki/">Accessibility Oz OzWiki</a></li>
+          <li><a href="http://web-a11y.herokuapp.com/">A11y Slack Chatroom</a></li>
+          <li><a href="http://a11yproject.com/">The A11y Project</a></li>
+          <li><a href="https://webaccessibility.withgoogle.com/resources">Google Accessibility Resources</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>General Resources &amp; Articles</h2>
+        <ul>
+          <li><a href="http://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile/user-experience">BBC Mobile Accessibility Guidelines</a></li>
+          <li><a href="http://pauljadam.com/#/resources#heading0">Paul Adam’s Favorite Accessibility Resources</a></li>
+          <li><a href="http://wet-boew.github.io/v4.0-ci/index-en.html">Web Experience Toolkit: a framework for building accessible sites</a></li>
+          <li><a href="https://www.w3.org/WAI/">Web Accessibility Initiative: web accessibility resources</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Testing Tools</h2>
+        <h4>Browser Extension Tools</h4>
+        <ul>
+          <li><a href="http://khan.github.io/tota11y/">tota11y: an accessibility visualization toolkit</a></li>
+          <li><a href="http://pa11y.org/">pa11y: your automated accessibility testing pal</a> </li>
+          <li><a href="http://accessibility-bookmarklets.org/">Highlight accessibility features of web pages</a> </li>
+          <li><a href="http://wave.webaim.org/extension/">Wave Accessibility Chrome Extension</a> </li>
+          <li><a href="http://accessibility-bookmarklets.org/">Accessibility Bookmarks: Highlight accessibility features of web pages</a> </li>
+          <li><a href="http://www.chromevox.com/">Chrome Vox Screenreader Extension</a> </li>
+          <li><a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en">Accessibility Developer Tools</a> </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Testing Tools</h2>
+        <h4>Color Contrast Tools</h4>
+        <ul>
+          <li><a href="http://leaverou.github.io/contrast-ratio/">Contrast Ratio Tool</a> </li>
+          <li><a href="http://webaim.org/resources/designers/">Web Accessibility Tips for Designers</a></li>
+          <li><a href="http://contrast-finder.tanaguru.com/">Tanaguru Contrast-Finder</a> </li>
+          <li><a href="https://www.paciellogroup.com/resources/contrastanalyser/">Paciello Colour Contrast Anaylser</a> </li>
+          <li><a href="http://webaim.org/resources/contrastchecker/">Web AIM Color Contrast Checker</a> </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Sites Approved by Accessible Users</h2>
+        <ul>
+          <li><a href="http://www.freedomscientific.com/">Freedom Scientific</a></li>
+          <li><a href="http://www.perkins.org/">Perkins School for the Blind</a></li>
+          <li><a href="http://www.seeingeye.org/?referrer=https://www.google.com/">The Seeing Eye Website</a></li>
+          <li><a href="http://www.afb.org/default.aspx">The American Foundation for the Blind</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Contact Information!</h2>
+        <p>Please feel free to contact me with any other questions!</p>
+        <p class="green">lindsaysilver1@gmail.com</p>
+      </section>
+
       </div>
       <footer>
         <div class="copyright">
@@ -78,7 +709,7 @@
 
       // Full list of configuration options available here:
       // https://github.com/hakimel/reveal.js#configuration
-            Reveal.initialize({
+      Reveal.initialize({
         controls: true,
         progress: true,
         history: true,
@@ -94,7 +725,7 @@
           { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
           { src: 'plugin/zoom-js/zoom.js', async: true },
           { src: 'plugin/notes/notes.js', async: true },
-                    { src: 'plugin/accessibility-helper/js/accessibility-helper.js', async: true, condition: function() { return !!document.body.classList; } }
+          { src: 'plugin/accessibility-helper/js/accessibility-helper.js', async: true, condition: function() { return !!document.body.classList; } }
         ]
       });
 
