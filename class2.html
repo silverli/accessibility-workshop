@@ -236,17 +236,16 @@ opens in a new window
 					<h2>Visually Hidden Content</h2>
 					<h3>How does it work?</h3>
 <pre><code class="css" data-trim>/* Hide only visually, but have it available for screenreaders.
-Copied from HTML5 Boilerplate*/
 
-.visuallyhidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
 }
 </code></pre>
 						<p><a href="http://snook.ca/archives/html_and_css/hiding-content-for-accessibility">Hiding Content for Accessibility</a></p>

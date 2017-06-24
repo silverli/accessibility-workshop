@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Class 1 ~ Web Accessibility ~ Girl Develop It</title>
+    <title>Web Accessibility ~ Girl Develop It</title>
 
     <meta name="description" content="This is the Girl Develop It Web Accessibility curriculum. It was originally developed by Sylvia Richardson and modified by Marcy Sutton.
 
@@ -55,16 +55,18 @@
       <div class="slides">
         <!-- Opening slides -->
         <section>
-          <img src="img/circle-gdi-logo.png" alt="Girl Develop It" style="max-height: 400px;" class="nonbordered">
-          <h1 id="slide1">Intro to Web Accessibility</h1>
-          <h2>Class 1</h2>
+          <img src="img/gdi-pgh-logo.jpg" alt="Girl Develop It" style="max-height: 400px;" class="nonbordered">
+          <h1 id="slide1">Web Accessibility Workshop</h1>
         </section>
 
         <!-- Welcome-->
         <section>
           <h2>Welcome!</h2>
-          <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
-          <p class="green">Some "rules"</p>
+          <p>Girl Develop It is here to provide affordable, accessible, and empowering resources for adult women to learn programming and web concepts.</p>
+        </section>
+
+        <section>
+          <p class="green">Some "rules":</p>
           <ul>
             <li>We are here for you!</li>
             <li>Every question is important</li>
@@ -74,13 +76,19 @@
         </section>
 
         <section>
+          <h1>WiFI</h1>
+          <h2>Network: IndustriousOffice</h2>
+          <h3>Username: user</h3>
+          <h3>Password: guest123</h3>
+        </section>
+
+        <section>
           <h2>Introductions</h2>
-          <p>Tell us about yourself.</p>
-          <ul>
-            <li>Who are you?</li>
-            <li>What do you hope to get out of the class?</li>
-            <li>What is your favorite 80's song?</li>
-          </ul>
+          <ol>
+            <li>Tell us about yourself. What do you do? </li>
+            <li>What's your coding experience?</li>
+            <li>What do you hope to get out of the class today?</li>
+          </ol>
         </section>
 
         <!-- Intro: What is Accessibility?-->
@@ -98,36 +106,35 @@
           </ul>
         </section>
 
-
-        <section>
-          <h2>Why worry?</h2>
-          <img src="img/accessdogs.jpg" alt="Dogs outside door, captioned 'We R UR community, beggin fer access'"/>
-          <p class="credit">Photo credit: <a href="http://www.flickr.com/photos/circulating/997909242/" target="_blank" title="Link opens in a new window">circulating<span class="visuallyhidden"> opens in a new window</span></a> <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/" target="_blank" title="Link opens in a new window">cc<span class="visuallyhidden"> opens in a new window</span></a></p>
-        </section>
         <section>
           <h2>Why make your sites accessible?</h2>
           <ul>
-            <li class="fragment">Expand your potential audience! 54 million people in the US have a disability, 1.8 million are unable to see printed words, and 16.1 million have a cognitive or mental illness that impedes daily functioning (<a href="http://www.census.gov/newsroom/releases/archives/facts_for_features_special_editions/cb10-ff13.html" target="_blank" title="Link opens in a new window">source<span class="visuallyhidden"> opens in a new window</span></a>).</li>
+            <li class="fragment">Expand your potential audience! 56.7 million people in the US have a disability, 1.8 million are unable to see printed words, and 16.1 million have a cognitive or mental illness that impedes daily functioning (<a href="https://www.census.gov/content/dam/Census/library/publications/2012/demo/p70-131.pdf" target="_blank" title="Link opens in a new window">source<span class="visuallyhidden"> opens in a new window</span></a>).</li>
+            <!-- TODO -->
             <li class="fragment">Be in compliance with legal guidelines, like Section 504/508 and WCAG 2.0.</li>
             <li class="fragment">Avoid <a href="http://accessibletech.org/access_articles/legal/courtCases.php" target ="_blank">potential lawsuits<span class="visuallyhidden"> opens in a new window</span>.</a></li>
             <li class="fragment">Do the right thing.</li>
           </ul>
+        </section>
+
+        <section>
+          <h2>Useful stats from the 2010 U.S. Census Bureau:</h2>
+          <ul>
+            <p>56.7 million people have a disability--19 percent of the civilian noninstitutionalized population.</p>
+            <li>Visual</li>
+            <li>Auditory</li>
+            <li>Physical</li>
+            <li>Speech</li>
+            <li>Cognitive</li>
+          </ul>
           <aside class="notes">
-            <p>Useful stats from the Census Bureau:</p>
+            <h2>Types of Disability</h2>
             <ul>
-              <li>54 million people have a disability--19 percent of the civilian noninstitutionalized population. This increases with age:
-                <ul>
-                  <li>5 percent of children 5 to 17 have disabilities.</li>
-                  <li>10 percent of people 18 to 64 have disabilities.</li>
-                  <li>38 percent of adults 65 and older have disabilities.</li>
-                </ul>
-              </li>
-              <li>1.8 million people 15 and older are  unable to see printed words.</li>
-              <li>1 million people 15 and older are unable to hear conversations.</li>
-              <li>2.5 million have difficulty having their speech understood.</li>
-              <li>16.1 million  have limitations in cognitive functioning or who have a mental or emotional illness.</li>
+              <li class="fragment">Visual disabilities: blind or low-sight, color blind</li>
+              <li class="fragment">Hearing disabilities: deaf or hard-of-hearing</li>
+              <li class="fragment">Physical disabilities: MS, paraplegic/quadriplegic, epilepsy</li>
+              <li class="fragment">Cognitive disabilities: dyslexia, alzheimer's, dementia, learning disabilities, autism</li>
             </ul>
-            <p>Legal issues: Some sites, like Target, have been sued under the Americans with Disabilities Act (ADA)</p>
           </aside>
         </section>
 
@@ -139,32 +146,16 @@
             <p>Ask if people recognize curb cut, then point out that while wheelchairs use them, so do strollers, people with luggage, etc.  Mention how accessibility can help the non-disabled as well.</p>
           </aside>
         </section>
+
         <section>
           <h2>Benefits of Accessibility</h2>
           <ul>
             <li>Curb cuts were designed for wheelchairs, but others use them. Similarly, accessibility features end up helping everyone.</li>
-            <li>Many times, good design practices create accessibility as a side effect.</li>
+            <li>Many times, good design and user experience practices create accessibility as a side effect.</li>
             <li>Accessibility features, like good alt text, can improve your search engine placement.</li>
           </ul>
         </section>
 
-        <section>
-          <h2>What are barriers to access?</h2>
-          <img src="img/barrier.jpg" alt="Traffic barriers"/>
-          <p class="credit">Photo credit: <a href="http://www.flickr.com/photos/apoptotic/4299922931/" target ="_blank">sciencesque<span class="visuallyhidden"> opens in a new window</span></a> <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/" target = "_blank">cc<span class="visuallyhidden"> opens in a new window</span></a></p>
-          <aside class="notes">
-            <p>This is a good place to pause and ask students to come up with potential types of disability that can affect web use.</p>
-          </aside>
-        </section>
-        <section>
-          <h2>Types of Disability</h2>
-          <ul>
-            <li class="fragment">Visual disabilities: blind or low-sight, color blind</li>
-            <li class="fragment">Hearing disabilities: deaf or hard-of-hearing</li>
-            <li class="fragment">Physical disabilities: MS, paraplegic/quadriplegic, epilepsy</li>
-            <li class="fragment">Cognitive disabilities: dyslexia, low literacy, learning disabilities</li>
-          </ul>
-        </section>
 
         <!-- How To-->
         <section>
@@ -172,7 +163,7 @@
           <img src="img/checkmark.jpg" alt="Checkmark with word 'chk' on blackboard"/>
           <p class="credit">Photo credit: <a href="http://www.flickr.com/photos/mattcarman/1573507091/" target ="_blank">Matt Carman<span class="visuallyhidden"> opens in a new window</span></a> <a href="http://creativecommons.org/licenses/by-nc-nd/2.0/" target ="_blank">cc<span class="visuallyhidden"> opens in a new window</span></a></p>
           <aside class="notes">
-            <p>Accessibility checkers can help, but they are not a full subsititute for manual testing.</p>
+            <p>Accessibility tools can help, but they are not a full subsititute for manual testing.</p>
             <p>You don't have to be perfect to be helping. No site will be perfectly accessible for everyone in the world.</p>
           </aside>
         </section>
@@ -184,7 +175,7 @@
           <p class="credit">Photo credit: <a href="http://www.flickr.com/photos/brailleinstitute/5169573221/" target ="_blank">Braille Institute<span class="visuallyhidden"> opens in a new window</span></a> <a href="http://creativecommons.org/licenses/by-nc-nd/2.0/" target ="_blank">cc<span class="visuallyhidden"> opens in a new window</span></a></p>
         </section>
         <section>
-          <h2>What assitive technology do people use?</h2>
+          <h2>What assitive technology do people with visual impairment use?</h2>
           <ul>
             <li>Browser zoom</li>
             <li>Screen magnification</li>
@@ -196,31 +187,52 @@
               <li>Low vision is very common</li>
               <li>Even people who are legally blind may have some residual vision</li>
               <li>Screen readers are also useful for people with print disabilities, like dyslexia</li>
+              <li>Screen readers: e.g. JAWS for Windows, NVDA, Voiceover for Apple products, ChromeVox (Chrome Extension)</li>
             </ul>
           </aside>
         </section>
         <section>
           <h2>Demo</h2>
+          <ul>
+            <li><a href="http://www.ikea.com/us/en/">Ikea</a></li>
+            <li><a href="https://www.starbucks.com/">Starbucks</a></li>
+          </ul>
           <aside class="notes">
-            <p>Choose a site with a complex nav menu, and show how long it takes to get through with a screen reader. I used CNN.com and NVDA for this demo, but any common screen reader will work.</p>
+            <p>Choose a site with a complex nav menu, and show how long it takes to get through with a screen reader. I used CNN.com.</p>
+            <p>Now, compare a site like starbucks to see skip nav, the difference thinking about accessibility can make.</p>
+            <p>only about 0.3% of users who responded to survey use Chrome Vox (most use JAWS, NVDA) on their laptop/desktop, but there are constraints to both of these—either need $1000 subscription or windows, so making do with a solid screen reader like Chrome Vox is fine for testing maybe not as much functionality as JAWS, but basic functionality is there</p>
+            <ul>
+              <li>Chrome Vox + N + H = Jump to next heading</li>
+              <li>Chrome Vox + P + H = Jump to previous heading</li>
+              <li>Chrome Vox + N + L = Jump to next link</li>
+            </ul>
           </aside>
         </section>
         <section>
           <h2>Let's try it</h2>
-          <p><a href="http://webaim.org/simulations/screenreader-sim.htm" target ="_blank">Screen reader simulation<span class="visuallyhidden"> opens in a new window</span></a></p>
-          <p>http://bit.ly/p3JmJ2</p>
+          <ul>
+            <li><a href="https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en">Chrome Vox</a></li>
+            <li>VoiceOver / Talkback</li>
+          </ul>
           <aside class="notes">
+            <p>Website you all want to try? Have a task in mind--trying to find hours, a piece of clothing, etc.</p>
             <p>Have students try the screenreader demo at http://webaim.org/simulations/screenreader-sim.htm. (With headphones!) You may have to help people install the Shockwave  plugin. Time limit to ten minutes, and cut it short if students seem bored or frustrated.</p>
             <p>If available, demo VoiceOver on the iPhone/iPad or Talkback on Android.</p>
           </aside>
         </section>
 
-        <!-- Alternate text -->
         <section>
-          <h2>Provide an alternate path</h2>
-          <img src="img/anotherpath.jpg" alt="Signs pointing to handicap-accessible routes" />
-          <p class="credit">Photo credit: <a href="http://www.flickr.com/photos/lng0004/7093675431/" target ="_blank">Linh H. Nguyen<span class="visuallyhidden"> opens in a new window</span></a> <a href="http://creativecommons.org/licenses/by-nc-nd/2.0/" target ="_blank">cc<span class="visuallyhidden"> opens in a new window</span></a></p>
+          <h2>Screen Reader Activity: Discussion</h2>
+          <ul>
+            <li>How did that feel?</li>
+            <li>What did you expect from the experience?</li>
+            <li>How did using a screen reader meet your expectations?</li>
+            <li>What was surprising about it?
+            </li>
+          </ul>
         </section>
+
+        <!-- Alternate text -->
         <section>
           <h2>Alt text</h2>
           <ul>
@@ -230,13 +242,14 @@
             <li class="fragment">If an image is purely decorative, use <code>alt=""</code> to instruct a screen reader to skip it.</li>
             <li class="fragment">Instead of using "longdesc," provide a caption or link. Consider HTML5 <code>figure</code> and <code>figcaption</code>.</li>
           </ul>
-<pre class="fragment"><code class="html">&#60;img src="location.jpg" alt="brief description"&#62;
-
-&lt;figure&gt;
-  &lt;img src="location.jpg"&gt;
-  &lt;figcaption&gt;brief description&lt;/figcaption&gt;
-&lt;/figure&gt;
-</code></pre>
+          <pre class="fragment">
+            <code class="html">
+            &#60;img src="location.jpg" alt="brief description"&#62;
+            &lt;figure&gt;
+              &lt;img src="location.jpg"&gt;
+              &lt;figcaption&gt;brief description&lt;/figcaption&gt;
+            &lt;/figure&gt;
+          </code></pre>
         </section>
         <section>
           <h2>Let's try it</h2>
@@ -261,6 +274,11 @@
           <h2>Provide contrast</h2>
           <img src="img/contrast.jpg" alt="Crosswalk with contrasting colors"/>
           <p class="credit">Photo credit: <a href="http://www.flickr.com/photos/antifluor/2074560932/" target="_blank" title="Link opens in a new window">antifluor<span class="visuallyhidden"> opens in a new window</span></a> <a href="http://creativecommons.org/licenses/by/2.0/" target="_blank" title="Link opens in a new window">cc<span class="visuallyhidden"> opens in a new window</span></a></p>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="http://jxnblk.com/colorable/demos/text/?background=%23222233&foreground=%23ffffff">Demo Tool</a></li>
+            <li><a href="http://webaim.org/resources/contrastchecker/">Web AIM Contrast Checker</a></li>
+          </ul>
         </section>
         <section>
           <h2>More on visual disabilities</h2>
